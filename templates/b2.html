@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ar">
+    <head>
+        <meta charset="utf-8">
+        <title>TMS </title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Favicons -->
+        <link href="{% static 'img/logo.png' %}" rel="icon">
+
+
+        <!-- Bootstrap CSS File -->
+        <link href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+        <!-- Libraries CSS Files -->
+        <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+        <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+        <link href="{% static 'lib/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
+        <link href="{% static 'lib/magnific-popup/magnific-popup.css' %}" rel="stylesheet">
+
+        <!--link rel="stylesheet" type="text/css" href="lib/scrollller/styles.css"-->
+        <link rel="stylesheet" href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'lib/owlcarousel/assets/owl.theme.default.css' %}">
+
+
+        <!-- Main Stylesheet File -->
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+        <!-- =======================================================
+          Theme Name: My Scond Test
+          Author: Emad Alslahi
+        ======================================================= -->
+    </head>
+    <body>
+
+        <header id="MyHeader" class="MyHeade bg-light">
+            <div class="container-fluid">
+                <div class="row">
+                    <nav class="navbar navbar-expand-md navbar-light">
+                        <!-- <div class="col-sm-12"> -->
+                            <a class="navbar-brand" href="#"><img src="{% static 'img/logo.png' %}"></a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#MyNavbar" aria-controls="MyNavbar" aria-expanded="false">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="MyNavbar">
+
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item active">
+                                        <a class="nav-link active" href="{% url 'index' %}">
+                                            الرئيسية</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="http://ehjzny.com/b/1s8d3">
+                                                انشاء حساب</a>
+                                        </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#about.html">
+                                            تعرف على النظام</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="#features.html">
+                                            الخدمات التي يقدمها النظام</a>
+                                        </li>
+
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#contact-us.html">
+                                            اتصـل بنا</a>
+                                    </li>
+                                </ul>
+
+                                <div class="navbar-icons ml-auto">
+
+                                    <div class="icon">
+                                        <div class="dropdown">
+
+                                            </div>
+                                        </div>
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        <!-- </div>  -->
+
+                    </nav>
+                </div>
+            </div>
+        </header>
+      {% block c %}
+
+      {% endblock c %}
+
+
+
+
+
+
+        <!-- <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a> -->
+        <!-- JavaScript jquery-2.2.0.min Libraries -->
+        <script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
+        <script src="{% static 'js/jquery-2.2.0.min.js' %}"></script>
+        <script src="{% static 'lib/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+        <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+        <script src="{% static 'lib/superfish/superfish.min.js' %}"></script>
+        <!--script src="lib/scrollller/floatingcarousel.js" type="text/javascript"></script-->
+        <script src="{% static 'lib/owlcarousel/owl.carousel.js' %}"></script>
+        <script src="{% static 'lib/magnific-popup/magnific-popup.min.js' %}"></script>
+        <script src="{% static 'js/numscroller-1.0.js' %}"></script>
+
+        <!-- Template Main Javascript File -->
+        <script src="{% static 'js/main.js' %}"></script>
+
+    </body>
+</html>
+
+

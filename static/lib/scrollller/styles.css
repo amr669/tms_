@@ -1,0 +1,41 @@
+#Advanced-Featuers .carousel img{
+    height: 300px;
+}
+#Advanced-Featuers .carousel {
+  /*border: 1px solid #333;*/
+  height: 156px;
+  padding:0 0 0 2px;
+  width: 762px;
+}
+#Advanced-Featuers .carousel#carousel-vertical {
+  height: 306px;
+  padding: 0;
+  width: auto;
+}
+#Advanced-Featuers .carousel#carousel-responsive {
+  width: auto;
+}
+#Advanced-Featuers .carousel li, 
+#Advanced-Featuers .carousel > div > div {
+  color: #fff;
+  padding:2px 0 2px 2px;
+}
+#Advanced-Featuers .carousel#carousel-vertical li, 
+#Advanced-Featuers .carousel#carousel-vertical > div > div {
+  padding:2px 2px 0 2px;
+}
+#Advanced-Featuers .carousel ul li:nth-child(even), 
+#Advanced-Featuers .carousel > div > div:nth-child(even) {
+  color:#666;
+}
+#Advanced-Featuers .carousel span {
+  background: #999;
+  display: block;
+  height: 150px;
+  font-size: 100px;
+  line-height: 150px;
+  text-align: center;
+  width: 150px;
+}
+
+
