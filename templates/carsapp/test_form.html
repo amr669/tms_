@@ -16,7 +16,7 @@
 
                                         <form method="POST">
                                             {% csrf_token %}
-                                        <label> welcom {{user.username}} <br>if you need a car number this can help <a href="{% url 'click' %}" >click</a> {% for c in cars %}{{c.first}}{% endfor %} </label><br>
+                                        <label> welcome {{user.username}} <br>if you need a car number this can help <a href="{% url 'click' %}" >click</a> {% for c in cars %}{{c.first}}{% endfor %} </label><br>
                                         <label>car number</label>
                                         <input type = "number" name = "car_number" id = "id_car_number">
                                         <a type ="submit" class="btn btn-primary" role="button">بحث</a>
