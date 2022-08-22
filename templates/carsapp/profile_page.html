@@ -1,4 +1,4 @@
-{% extends 'b1.html' %}
+{% extends 'b2.html' %}
 {% load static %}
 {%block title%}profile_page{%endblock%}
 
@@ -10,31 +10,41 @@
 
 {% endblock %}
 {% block breadcrumb %}
+
 <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
 <li class="breadcrumb-item active">New test car</li>
 {% endblock breadcrumb %}
+{% block nav-con %}{% endblock nav-con %}
+{% block c %}
+<style>
+.masthead-heading.text-uppercase,
+.masthead-subheading {
+    text-align: center;
+  }
 
-{% block head %}
+
+</style>
+
 
 <header class="masthead">
     <div class="container">
-        
+
 
         <div class="masthead-subheading">مرحبا بكم</div>
         <div class="masthead-heading text-uppercase">ادارة المخالفات المروريه</div>
-        
+
         <div class="container pg-3">
             <h2>my cars page</h2>
-            {% if messages %} 
+            {% if messages %}
                 {% for ms in messages %}
                 <p>
                     {{ms}}
                     <a href="{% url 'new_car' u_n=user.id %}">add new car</a>
                 </p>
-                {% endfor %} 
-        {% endif %} 
-            
-            <div class="table-responsive">          
+                {% endfor %}
+        {% endif %}
+
+            <div class="table-responsive">
             <table class="table">
                 <thead>
                     <tr>
@@ -48,7 +58,7 @@
                     <tr>
                         <td>{{car.row_num}}</td>
                         <td>{{car.car_no}}</td>
-                        <td>                 
+                        <td>
                     {%if car.car_vals %}
                         <table class="table">
                             <tr>
@@ -67,30 +77,33 @@
                     {%else%}
                         <small>No Posts</small>
                     {%endif%}
-                        </td>   
+                        </td>
                     </tr>
                 {% endfor %}
                 </tbody>
             </table>
             </div>
             </div>
-    
-    
-      
+
+
+
     </div>
 
 </header>
-{% endblock head %}
+<div class="b">
+
+</div>
+{% endblock c %}
 
 <li class="breadcrumb-item">dashboard</li>
     <li class="breadcrumb-item active">{{user.username}}</li>
 
 {% block content %}
 
-        
+
         {%endblock content %}
         {% block js %}
         <script src="{% static '1jquery.min.js'%}"></script>
         <script src="{% static '1bootstrap.min.js'%}"></script>
-        
+
         {% endblock js %}

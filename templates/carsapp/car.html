@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'b2.html' %}
 
 {%block title%} car  {%endblock%}
 
@@ -7,6 +7,10 @@
 {%endblock%}
 
 {% block content %}
+{% block c %}
+
+
+
 <table class="table">
     <thead class="thead-dark">
     <tr>
@@ -15,25 +19,26 @@
         <th>Topic</th>
         <th>Last Post</th>
     </tr>
-    </thead>
-    <tbody>
-    
+</thead>
+<tbody>
+
     <tr>
         <td><a >dd{{uuu.car}}</a>
         <small class="text-muted d-block">C_number{{board.username}}</small>
-        </td>
-        <td>{{uu.}}</td>
-        <td>kk</td>
-        <td>
+    </td>
+    <td>{{uu.}}</td>
+    <td>kk</td>
+    <td>
 
 
-            <small>No Posts</small>
+        <small>No Posts</small>
 
 
-        </td>
-    </tr>
+    </td>
+</tr>
 
-    </tbody>
+</tbody>
 </table>
 
+{% endblock c %}
 {%endblock%}

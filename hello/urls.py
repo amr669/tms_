@@ -4,8 +4,8 @@ from .views import *
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path('',views.index1,name='index'),
-    path('b',views.index,name='index'),
+    path('',views.index,name='index'),
+    path('b',views.my_link,name='my-link'),
     path('mycars' , views.profile, name='profile'),
     path('test/new/',views.new_carTest,name='new_car2'),
     path('payment/<int:v_n>/new',views.new_payment,name='new_pymnt'),

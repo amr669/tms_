@@ -40,7 +40,7 @@
                 <div class="row">
                     <nav class="navbar navbar-expand-md navbar-light">
                         <!-- <div class="col-sm-12"> -->
-                            <a class="navbar-brand" href="#"><img src="{% static 'img/logo.png' %}"></a>
+                            <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}"></a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#MyNavbar" aria-controls="MyNavbar" aria-expanded="false">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
@@ -51,27 +51,48 @@
                                         <a class="nav-link active" href="{% url 'index' %}">
                                             الرئيسية</a>
                                         </li>
+
+{% if user.is_authenticated %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'profile' %}">
+لوحة التحكم</a>
+</li>
+{% else %}
                                         <li class="nav-item">
-                                            <a class="nav-link" href="http://ehjzny.com/b/1s8d3">
+                                            <a class="nav-link" href="{% url 'signup' %}">
                                                 انشاء حساب</a>
                                         </li>
+                                        {% endif %}
+{% block nav-con %}
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#about.html">
+                                        <a class="nav-link" href="#About">
                                             تعرف على النظام</a>
                                         </li>
 
                                         <li class="nav-item">
-                                        <a class="nav-link" href="#features.html">
+                                        <a class="nav-link" href="#Clints">
                                             الخدمات التي يقدمها النظام</a>
                                         </li>
 
 
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#contact-us.html">
+                                        <a class="nav-link" href="#Contact-Us">
                                             اتصـل بنا</a>
                                     </li>
                                 </ul>
 
+                                {% endblock nav-con %}
+                                {% if user.is_authenticated %}
+                                <h9>
+                                welcom{{user.username}}
+                                </h9>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'logout' %}">
+                                خروج</a>
+                                </li>
+                                {% else %}
+
+                                                                        {% endif %}
                                 <div class="navbar-icons ml-auto">
 
                                     <div class="icon">
@@ -80,7 +101,9 @@
                                             </div>
                                         </div>
 
-
+                                        {% if messages %} {% for ms in messages %}
+                                            <strong> {{ms}}!</strong> <a class="ptn" href="{% url 'new_car2' %}">add car</a>
+                                        {% endfor %} {% endif %}
 
 
                                     </div>
@@ -98,6 +121,31 @@
       {% endblock c %}
 
 
+        <!--==========================
+          Footer
+        ============================-->
+        <section id="Footer" class="footer bg-dark">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <img src="{% static 'img/U.png' %}" class="logo" alt="logo">
+                    </div>
+                    <div class="col-12">
+                        <a class="social" href="#"><i class="fa fa-youtube-play"></i></a>
+                        <a class="social" href="#"><i class="fa fa-snapchat"></i></a>
+
+                        <a class="social" href="#"><i class="fa fa-instagram"></i></a>
+                        <a class="social" href="#"><i class="fa fa-twitter"></i></a>
+                        <a class="social" href="#"><i class="fa fa-facebook"></i></a>
+                    </div>
+                    <div class="col-12">
+                        <p class="copyright"> CopyRight &COPY; 2018 <strong>TMS </strong></p>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
 
 
 

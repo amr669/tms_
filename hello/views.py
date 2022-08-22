@@ -13,6 +13,10 @@ from django.shortcuts import render, redirect
 from .models import CUSTOMER, VIOLATION, CAR
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+
+def my_link(request):
+    return render(request,'contact.html')
+
 def click (request):
     cars = CAR.objects.all()
     for i in cars:
@@ -29,7 +33,7 @@ def signup(request):
         if form.is_valid():
             user = form.save()
             auth_login(request,user)
-            return redirect('index2')
+            return redirect('index')
     return render(request,'signup.html',{'form':form})
 
 
@@ -116,7 +120,7 @@ def profile(request):
         return render(request, 'carsapp/profile_page.html',cbv)
     else:
         messages.info(request, 'you dont have any car yet')
-        return render(request, 'index.html', cbv)
+        return render(request, 'index2.html', cbv)
 
 
 @login_required

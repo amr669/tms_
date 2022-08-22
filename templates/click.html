@@ -9,18 +9,18 @@
 
 {%endblock%}
 {% block stylesheet %}
-        <style>
-            .vvmastheadd1{
-                margin-top: 10%;
-                margin-left: 30%;
-            }
-            .footer{
-                margin-top :13%;
-            }
-        </style>
 <link href="{% static 'css/s.css' %}" rel="stylesheet" />
 {% endblock stylesheet %}
-{% block head %}
+{% block c %}
+<style>
+    .vvmastheadd1{
+        margin-top: 10%;
+        margin-left: 30%;
+    }
+    .footer{
+        margin-top :13%;
+    }
+</style>
 
 <header class="vvmastheadd1">
 
@@ -41,7 +41,7 @@
 
     </div>
 </header>
-{% endblock head %}
+{% endblock c %}
 
 {% block content %}
 

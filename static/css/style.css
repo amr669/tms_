@@ -392,7 +392,9 @@ section{
     font-size: larger;
     margin-bottom: 25px;
 }
-
+.b{
+margin-bottom: 11rem;
+}
 /*=========================================================*/
 .about-img{
     max-width: 80%;

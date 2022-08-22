@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "widget_tweaks",
     "hello",
-    
+
 ]
 
 MIDDLEWARE = [
@@ -76,7 +76,7 @@ TEMPLATES = [
             # BASE_DIR / 'templates'
             os.path.join(BASE_DIR,'templates'),
             os.path.join(BASE_DIR,'templates/accounts'),
-            
+
             ],
         "APP_DIRS": True,
         "OPTIONS": {
