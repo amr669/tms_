@@ -63,7 +63,7 @@ def index1(request):
 
 
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'index2.html')
 
 def profile(request):
     class MyCar:
