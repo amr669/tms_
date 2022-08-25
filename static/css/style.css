@@ -50,7 +50,7 @@ p {
 .btn.btn-primary {
     width: 100%;
     height: 70px;
-    display: flex;
+    display: block;
     align-items: center;
     justify-content: space-between;
     padding: 0 15px;
@@ -892,6 +892,20 @@ a:hover{
 }
 .form-group label{
     direction: ltr;
+}
+.card-body.btn.btn-primary {
+    /* width: 100%; */
+    /* height: 70px; */
+    display: block;
+    align-items: center;
+    justify-content: space-between;
+    justify-items: center;
+    padding: 0 15px;
+    background-image: linear-gradient(to right, #77A1D3 0%, #79CBCA 51%, #77A1D3 100%);
+    border: none;
+    transition: 0.5s;
+    background-size: 200% auto;
+    text-align: center;
 }
 #Footer *{
     text-align: center;
