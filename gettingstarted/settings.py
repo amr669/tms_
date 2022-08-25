@@ -34,9 +34,10 @@ if 'SECRET_KEY' in os.environ:
 
 
 # Generally avoid wildcards(*). However since Heroku router provides hostname validation it is ok
+ALLOWED_HOSTS = ['127.0.0.1','.localhost', 'traffic-managementsystem.herokuapp.com']
 if IS_HEROKU:
-    # ALLOWED_HOSTS = ["*"]
-    ALLOWED_HOSTS = ['127.0.0.1','.localhost', 'mealraterer.herokuapp.com']
+    ALLOWED_HOSTS = ["*"]
+    ALLOWED_HOSTS = ['127.0.0.1','.localhost', 'traffic-managementsystem.herokuapp.com']
 else:
     ALLOWED_HOSTS = []
 
