@@ -888,6 +888,10 @@ a:hover{
     position: absolute;
     /* bottom: 0px;  */
     width: 100%;
+    margin-top: 10%;
+}
+.form-group label{
+    direction: ltr;
 }
 #Footer *{
     text-align: center;
