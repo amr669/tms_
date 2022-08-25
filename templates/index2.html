@@ -11,8 +11,25 @@
         <!--==========================
           Intro Section
         ============================-->
+
         <section id="intro" class="">
+            {% if messages %} {% for ms in messages %}
+            {% if ms.tags == "info" %}
+
+            <div class="alert alert-success alert-dismissible fade in">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>{{ms}}...!!</strong> 
+                <strong> </strong> <a class="ptn b-3" href="{% url 'new_car2' %}">add car</a>
+              </div>
             <div class="container-fluid text-center">
+            {% endif %}{% if ms.tags == "error" %}
+            <div class="alert alert-danger alert-dismissible fade in">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong> {{ms}} </strong> 
+              </div>
+            
+            {% endif %}
+            {% endfor %} {% endif %}
                 <!-- <img class="cmmc" src="img/1440x959NEW.jpg" alt=""> -->
 
 
@@ -173,21 +190,25 @@
                         -->
                     </div>
                 </div>
-                <div class="row justify-content-center text-center">
-                    <div class="col-10 col-sm-5">
-                        <input class="form-control name-txt" type="text" placeholder="اسمك الكريم">
-                    </div>
-                    <div class="col-10 col-sm-5">
-                        <input class="form-control mail-txt" type="email" placeholder="البريد الالكتروني">
-                    </div>
-                    <div class="col-10">
-                        <textarea class="form-control msg-txt" rows="5" placeholder="الرسالة"></textarea>
-                    </div>
-                    <div class="col-12 text-center">
-                        <button type="submit" class="btn btn-primary">ارسل الرسالة</button>
-                    </div>
+                <form action="{% url 'contact' %}" method="POST">
+                    {% csrf_token %}
 
-                </div>
+                    <div class="row justify-content-center text-center">
+                        <div class="col-10 col-sm-5">
+                            <input name="name" class="form-control name-txt" type="text" placeholder="اسمك الكريم">
+                        </div>
+                        <div class="col-10 col-sm-5">
+                            <input name="email" class="form-control mail-txt" type="email" placeholder="البريد الالكتروني">
+                        </div>
+                        <div class="col-10">
+                            <textarea name="ms" class="form-control msg-txt" rows="5" placeholder="الرسالة"></textarea>
+                        </div>
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-primary">ارسل الرسالة</button>
+                        </div>
+                        
+                    </div>
+                </form>
 
             </div>
         </section>

@@ -14,7 +14,8 @@
 
         <!-- Bootstrap CSS File -->
         <link href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-
+        <!-- w3school CSS File -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <!-- Libraries CSS Files -->
         <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
         <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
@@ -24,17 +25,17 @@
         <!--link rel="stylesheet" type="text/css" href="lib/scrollller/styles.css"-->
         <link rel="stylesheet" href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}">
         <link rel="stylesheet" href="{% static 'lib/owlcarousel/assets/owl.theme.default.css' %}">
-
-
+        
+        
         <!-- Main Stylesheet File -->
         <link href="{% static 'css/style.css' %}" rel="stylesheet">
+        {% comment %} <link href="{% static 'css/bootstrab.min.css' %}" rel="stylesheet"> {% endcomment %}
         <!-- =======================================================
-          Theme Name: My Scond Test
+            Theme Name: My Scond Test
           Author: Emad Alslahi
         ======================================================= -->
     </head>
     <body>
-
         <header id="MyHeader" class="MyHeade bg-light">
             <div class="container-fluid">
                 <div class="row">
@@ -45,70 +46,69 @@
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                             <div class="collapse navbar-collapse" id="MyNavbar">
-
+                                
                                 <ul class="navbar-nav ml-auto">
                                     <li class="nav-item active">
                                         <a class="nav-link active" href="{% url 'index' %}">
                                             الرئيسية</a>
                                         </li>
-
-{% if user.is_authenticated %}
-<li class="nav-item">
-    <a class="nav-link" href="{% url 'profile' %}">
-لوحة التحكم</a>
-</li>
-{% else %}
+                                        
+                                        {% if user.is_authenticated %}
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{% url 'login' %}">
-                                                 تسجيل الدخول </a>
-                                        </li>
-                                        {% endif %}
-{% block nav-con %}
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#About">
-                                            تعرف على النظام</a>
-                                        </li>
+                                            <a class="nav-link" href="{% url 'profile' %}">
+                                                لوحة التحكم</a>
+                                            </li>
+                                            {% else %}
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{% url 'login' %}">
+                                                    تسجيل الدخول </a>
+                                                </li>
+                                                {% endif %}
+                                                {% block nav-con %}
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#About">
+                                                        تعرف على النظام</a>
+                                                    </li>
+                                                    
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#Clints">
+                                                            الخدمات التي يقدمها النظام</a>
+                                                        </li>
+                                                        
+                                                        
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" href="#Contact-Us">
+                                                                اتصـل بنا</a>
+                                                            </li>
+                                                        </ul>
+                                                        
+                                                        {% endblock nav-con %}
+                                                        {% if user.is_authenticated %}
+                                                        <h9>
+                                                            welcom{{user.username}}
+                                                        </h9>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" href="{% url 'logout' %}">
+                                                                خروج</a>
+                                                            </li>
+                                                            {% else %}
+                                                            
+                                                            {% endif %}
+                                                            <div class="navbar-icons ml-auto">
+                                                                
+                                                                <div class="icon">
+                                                                    <div class="dropdown">
+                                                                    </div>
+                                                                </div>
+                                                                <div style="background-color=red">
+                                                  
+                                                                </div>
+                                                                
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
-                                        <li class="nav-item">
-                                        <a class="nav-link" href="#Clints">
-                                            الخدمات التي يقدمها النظام</a>
-                                        </li>
-
-
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#Contact-Us">
-                                            اتصـل بنا</a>
-                                    </li>
-                                </ul>
-
-                                {% endblock nav-con %}
-                                {% if user.is_authenticated %}
-                                <h9>
-                                welcom{{user.username}}
-                                </h9>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'logout' %}">
-                                خروج</a>
-                                </li>
-                                {% else %}
-
-                                                                        {% endif %}
-                                <div class="navbar-icons ml-auto">
-
-                                    <div class="icon">
-                                        <div class="dropdown">
-
-                                            </div>
-                                        </div>
-
-                                        {% if messages %} {% for ms in messages %}
-                                            <strong> {{ms}}!</strong> <a class="ptn" href="{% url 'new_car2' %}">add car</a>
-                                        {% endfor %} {% endif %}
-
-
-                                    </div>
-                                </div>
-                            </div>
 
                         <!-- </div>  -->
 
@@ -141,10 +141,10 @@
 
             </div>
         </section>
-
-
-
-
+        
+        
+        
+        
         <!-- <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a> -->
         <!-- JavaScript jquery-2.2.0.min Libraries -->
         <script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
@@ -157,11 +157,14 @@
         <script src="{% static 'lib/owlcarousel/owl.carousel.js' %}"></script>
         <script src="{% static 'lib/magnific-popup/magnific-popup.min.js' %}"></script>
         <script src="{% static 'js/numscroller-1.0.js' %}"></script>
-
+        
         <!-- Template Main Javascript File -->
         <script src="{% static 'js/main.js' %}"></script>
-
+        <!-- Template w3school Javascript File -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        
     </body>
-</html>
+    </html>
 
 

@@ -10,7 +10,7 @@ from django.views.generic import UpdateView
 # from .forms import SignUpForm
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
-from .models import CUSTOMER, VIOLATION, CAR
+from .models import CUSTOMER, VIOLATION, CAR, Contact
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
@@ -198,3 +198,26 @@ def pay_done(request,v_n1):
     }
     # messages.info(request, 'you have successfully payed your violation')
     return redirect('profile' )
+
+
+def contact(request):
+    if request.method=="POST":
+        
+        ms=request.POST['ms']
+        name=request.POST['name']
+        email=request.POST['email']
+        if ms :
+                
+            Contact.objects.create(
+                name=name,
+                email=email,
+                ms=ms
+            )
+        else:
+            messages.error(request,"you must at least write a mesage")
+            return redirect('index')
+        
+        print(ms)
+        print(name)
+        print(email)
+    return redirect('index')

@@ -68,3 +68,17 @@ class CUSTOMER(models.Model):
         return self.account.username
 
 
+class Contact(models.Model):
+    name=models.CharField( max_length=50, null=True)
+    email=models.EmailField( max_length=254, null=True)
+    ms=models.CharField(max_length=50)
+    
+    def __str__(self):
+        if len(self.ms)>15:
+            
+            mss=str(self.ms[:15])
+        else:
+            mss=str(self.ms)
+        # mss=str(self.name)+str(mss)
+        return str(self.name)+str(mss)
+    
