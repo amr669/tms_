@@ -59,8 +59,8 @@
 </li>
 {% else %}
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{% url 'signup' %}">
-                                                انشاء حساب</a>
+                                            <a class="nav-link" href="{% url 'login' %}">
+                                                 تسجيل الدخول </a>
                                         </li>
                                         {% endif %}
 {% block nav-con %}
@@ -128,7 +128,7 @@
             <div class="container-fluid">
                 <div class="row justify-content-center">
                     <div class="col-12">
-                        <img src="{% static '/static/img/logo.png' %}" class="logo" alt="logo">
+                        <img src="{% static 'img/logo.png' %}" class="logo" alt="logo">
                     </div>
                     <div class="col-12">
                         <a class="social" href="http://www.facebook.com/amresam.kingcyclone"><i class="fa fa-facebook"></i></a>

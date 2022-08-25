@@ -47,7 +47,7 @@ class VIOLATION(models.Model):
 
     car = models.ForeignKey(CAR, related_name='violations', on_delete=models.CASCADE)
     V_number = models.BigAutoField(primary_key=True, editable=False)
-
+    description= models.CharField(default="ركون خاطئ" ,max_length=50)
     cost = models.PositiveIntegerField()
     created_dt = models.DateTimeField(auto_now_add=True)
     IsPaid = models.BooleanField(default=False)

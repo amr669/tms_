@@ -196,5 +196,5 @@ def pay_done(request,v_n1):
         'my_car':my_car,
 
     }
-
-    return redirect('profile')
+    # messages.info(request, 'you have successfully payed your violation')
+    return redirect('profile' )
